@@ -17,7 +17,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: black;
+    
+    background-image: url(img/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 .container {
     width: 52.7rem;
@@ -27,7 +31,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 0.5rem solid white;
+    border: 0.5rem solid black;
 }
 h1 {
     font-size: 3.6rem;
@@ -58,10 +62,11 @@ form {
     color: black;
 }
 .caixaForm input {
+    position: relative;
     width: 45.8rem;
     height: 5.2rem;
     border-radius: 1.5rem;
-    border: 0.2rem solid hsl(0, 0%, 94%);
+    border: 0.2rem solid black;
     font-size: 1.6rem;
     padding: 1rem;
     display: block;
@@ -70,7 +75,7 @@ form {
     width: 30rem;
     height: 5.2rem;
     border-radius: 1.5rem;
-    border: 0.2rem solid hsl(0, 0%, 94%);
+    border: 0.2rem solid black;
     font-size: 1.6rem;
     padding: 1rem;
 
@@ -80,12 +85,12 @@ form {
     width: 15rem;
     height: 5.2rem;
     border-radius: 1.5rem;
-    border: 0.2rem solid hsl(0, 0%, 94%);
+    border: 0.2rem solid black;
     font-size: 1.6rem;
     padding: 1rem;
     display: block;
 }
-.caixaForm .msgErro {
+.caixaForm small {
     position: absolute;
     left: 0;
     visibility: hidden;
@@ -97,7 +102,30 @@ form {
 .caixaForm.erro input {
     border-color: hsl(0, 72%, 51%);
 }
-.caixaForm.erro .msgErro {
+.caixaForm.erro small {
     visibility: visible;
     color: hsl(6, 78%, 57%);
+}
+
+/* loading */
+.loader {
+    position: absolute;
+    top: 40%;
+    left: 3%;
+    border: 0.5rem solid #f3f3f3;
+    border-top: 0.5rem solid #3498db;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    animation: spin 1s linear infinite;
+    visibility: hidden;
+   
+}
+
+@keyframes spin {
+    0% { transform: rotate (0deg); }
+    100% { transform: rotate(360deg); }
+}
+.hide-loader {
+    visibility: visible;
 }
